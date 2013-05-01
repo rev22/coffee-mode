@@ -1,0 +1,15 @@
+Source: coffee-mode
+Section: editors
+Priority: optional
+Maintainer: Michele Bini <michele.bini@gmail.com>
+Build-Depends: debhelper (>= 7.0.50~)
+Standards-Version: 3.9.1
+Homepage: https://github.com/rev22/coffee-mode
+
+Package: coffee-mode
+Architecture: all
+Depends: emacsen, ${misc:Depends}
+Enhances: coffeescript
+Description: Emacs mode for editing CoffeScript code
+ This package provides emacs support for CoffeeScript code, including
+ syntax highlighting, indentation support, and menu.

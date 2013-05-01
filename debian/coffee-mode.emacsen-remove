@@ -1,0 +1,12 @@
+#!/bin/sh
+# /usr/lib/emacsen-common/packages/remove/coffee-mode
+
+set -e
+
+FLAVOR=$1
+PACKAGE=coffee-mode
+
+if [ ${FLAVOR} != emacs ]; then
+    echo remove/${PACKAGE}: purging byte-compiled files for ${FLAVOR}
+    rm -rf /usr/share/${FLAVOR}/site-lisp/${PACKAGE}
+fi
