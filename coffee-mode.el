@@ -457,6 +457,16 @@ called `coffee-compiled-buffer-name'."
                               coffee-cs-keywords
                               iced-coffee-cs-keywords) 'words)))
 
+
+(defface coffee-lambda-face
+  '((((class color) (background light)) (:weight bold :foreground "blue"))
+    (((class color) (background dark))  (:weight bold :foreground "yellow"))
+    (t                                  ()))
+  "Face used for the arrow symbol, for functions."
+  :group 'coffee)
+(defvar coffee-lambda-face 'coffee-lambda-face)
+  
+
 ;; Create the list for font-lock. Each class of keyword is given a
 ;; particular face.
 (defvar coffee-font-lock-keywords
@@ -469,7 +479,7 @@ called `coffee-compiled-buffer-name'."
     (,coffee-assign-regexp . font-lock-type-face)
     (,coffee-local-assign-regexp 1 font-lock-variable-name-face)
     (,coffee-boolean-regexp . font-lock-constant-face)
-    (,coffee-lambda-regexp 2 font-lock-function-name-face)
+    (,coffee-lambda-regexp 2 coffee-lambda-face)
     (,coffee-keywords-regexp 1 font-lock-keyword-face)
     (,coffee-string-interpolation-regexp 0 font-lock-variable-name-face t)))
 
